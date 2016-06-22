@@ -3,6 +3,7 @@
   1、判断对象是否为空 Object.keys(obj).length==0
   
   2、对象方法中的this指向这个对象
+
     var myobj = {
     	foo : "bar",
     	func : function () {
@@ -16,6 +17,7 @@
     	}
     };
     myobj.func();
+  3、
 
   
 

@@ -20,6 +20,7 @@
     
   3、创建对象的几种方法
   
+    混合方式创建
     function Car (name,price){
       this.name = name;
       this.price = price;
@@ -29,6 +30,21 @@
     } 
     var camry = new Car('凯美瑞'，27)；
     camry.sell();
+    
+    原型方式创建
+    function Dog(){
+      
+    }
+    Dog.prototype.name = "旺财";
+    Dog.prototype.eat = function(){
+      alert(this.name + "是个吃货");
+    }
+    var wangcai = Dog();
+    wangcai.eat();
+    
+    对象字面量方式
+    Person = {firstname:"Mark",lastname:"yun",age:25,eyecolor:"black"};
+    
     
     
 

@@ -19,7 +19,7 @@
     myobj.func();
     
   3、创建对象的几种方法
-  
+    ####混合方式
     function Car (name,price){
       this.name = name;
       this.price = price;

@@ -19,7 +19,7 @@
     myobj.func();
     
   3、创建对象的几种方法
-  a.混合方式
+  
     function Car (name,price){
       this.name = name;
       this.price = price;
@@ -27,6 +27,10 @@
     Car.prototype.sell = function(){
       alert("我是" + this.name + ",我现在卖" + this.price+"万元")
     } 
+    var camry = new Car('凯美瑞'，27)；
+    camry.sell();
+    
+    
 
     
 

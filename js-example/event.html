@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="para">123</div>
+	<ul id="test1">
+		<li>item 1</li>
+		<li>item 2</li>
+		<li>item 3</li>
+	</ul>
+	<ul id="test">
+		<li>item 4</li>
+		<li>item 5</li>
+		<li>item 6</li>
+	</ul>
+	<button onmouseup="whichButton(event);">点击</button>
+	<input type="text" name="myInput" onkeypress="return numbersOnly(this,event);">
+	<script type="text/javascript">
+		var para = document.querySelector('#para');
+		para.addEventListener('click',function(event){
+			event.target.innerHTML="click count:"+event.detail;
+		},false);
+		var ul = document.querySelector('#test');
+		var ul1 = document.querySelector('#test1');
+		ul.addEventListener('mouseover',function(event){//mouseover会冒泡
+			event.target.style.color="red";
+			setTimeout(function(){
+				event.target.style.color="";
+			},500)
+		},false);//会触发很多次
+
+		ul.addEventListener('mouseout',function(event){//mouseover会冒泡，子节点的mouseover事件会触发父节点的监听函数
+			event.target.style.color="yellow";
+			setTimeout(function(){
+				event.target.style.color="";
+			},1000)
+		},false);//会触发很多次
+
+
+		ul1.addEventListener('mouseenter',function(event){//mouseenter不会冒泡
+			event.target.style.color="red";
+			setTimeout(function(){
+				event.target.style.color="";
+			},500)
+		},false);//只会触发一次
+
+		ul1.addEventListener('mouseleave',function(event){
+			event.target.style.color="yellow";
+			setTimeout(function(){
+				event.target.style.color="";
+			},1000)
+		},false);//只会触发一次
+
+		function whichButton(e){
+			switch(e.button){
+				case 0:
+					e.target.innerHTML='Left button clicked.';
+					//console.log('Left button clicked.');
+					break;
+				case 1:
+					e.target.innerHTML='Middle button clicked.';
+					//console.log('Middle button clicked.');
+					break;
+				case 2:
+					e.target.innerHTML='Right button clicked.';
+					//console.log('Right button clicked.');
+					break;
+				default:
+					e.target.innerHTML='Unexpected code: ' + e.button;
+					//console.log('Unexpected code: ' + e.button);
+			}
+		}
+		function numbersOnly(oToCheckField,e){
+			//return e.charCode === 0 || /\d/.test(String.fromCharCode(e.charCode));
+			return /\d/.test(String.fromCharCode(e.charCode));
+		}
+	</script>
+</body>
+</html>

@@ -62,7 +62,20 @@
 
   7、函数声明可以覆盖变量声明，如果变量声明并且复制，则不能被函数声明所覆盖
   
-  8、
+  8、js事件 addEventListener是推荐的指定监听函数的方法。它有如下优点：http://javascript.ruanyifeng.com/dom/event.html#toc0
+  
+    可以针对同一个事件，添加多个监听函数。
+    能够指定在哪个阶段（捕获阶段还是冒泡阶段）触发回监听函数。false,冒泡阶段，true捕获阶段，其他事件监听都是处于冒泡阶段
+    除了DOM节点，还可以部署在window、XMLHttpRequest等对象上面，等于统一了整个JavaScript的监听函数接口。
+    
+  9、事件传播的三个阶段 事件传播的最上层对象是window，接着依次是document，html（document.documentElement）和body（document.dody）
+    第一阶段：从window对象传导到目标节点，称为“捕获阶段”（capture phase）。
+    第二阶段：在目标节点上触发，称为“目标阶段”（target phase）。
+    第三阶段：从目标节点传导回window对象，称为“冒泡阶段”（bubbling phase）。
+    
+  
+  
+    
 
   
 

@@ -1,6 +1,14 @@
 ### js相关特别用法
 
-  1、判断对象是否为空 Object.keys(obj).length==0
+  1、判断对象是否为空 Object.keys(obj).length==0, 
+    Object.prototype.toString.call(2) // "[object Number]"
+    Object.prototype.toString.call('') // "[object String]"
+    Object.prototype.toString.call(true) // "[object Boolean]"
+    Object.prototype.toString.call(undefined) // "[object Undefined]"
+    Object.prototype.toString.call(null) // "[object Null]"
+    Object.prototype.toString.call(Math) // "[object Math]"
+    Object.prototype.toString.call({}) // "[object Object]"
+    Object.prototype.toString.call([]) // "[object Array]"
   
   2、对象方法中的this指向这个对象,闭包函数指向window
 

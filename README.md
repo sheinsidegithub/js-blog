@@ -11,6 +11,7 @@
     Object.prototype.toString.call({}) // "[object Object]"
     Object.prototype.toString.call([]) // "[object Array]"
 
+    比typeof运算符更准确的类型判断函数
     var type = function (o){
       var s = Object.prototype.toString.call(o);
       return s.match(/\[object (.*?)\]/)[1].toLowerCase();

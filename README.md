@@ -73,6 +73,8 @@
     第二阶段：在目标节点上触发，称为“目标阶段”（target phase）。
     第三阶段：从目标节点传导回window对象，称为“冒泡阶段”（bubbling phase）。
     
+  10、Array.prototype.slice.call(div_list) 将伪数组转化为真正的数组；
+    
   
   
     

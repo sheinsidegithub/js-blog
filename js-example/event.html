@@ -18,6 +18,15 @@
 	</ul>
 	<button onmouseup="whichButton(event);">点击</button>
 	<input type="text" name="myInput" onkeypress="return numbersOnly(this,event);">
+
+	<input id="test" type="text" value="Select me!" />
+
+	<select size="1" onchange="changeEventHandler(event);">
+		<option>chocolate</option>
+		<option>strawberry</option>
+		<option>vanilla</option>
+	</select>
+
 	<script type="text/javascript">
 		var para = document.querySelector('#para');
 		para.addEventListener('click',function(event){
@@ -76,6 +85,13 @@
 		function numbersOnly(oToCheckField,e){
 			//return e.charCode === 0 || /\d/.test(String.fromCharCode(e.charCode));
 			return /\d/.test(String.fromCharCode(e.charCode));
+		}
+		var elem = document.getElementById('test');
+		elem.addEventListener('selecte',function(event){
+			console.log('selection changed');
+		},false);
+		function changeEventHandler(ev){
+			console.log(ev.target.value);
 		}
 	</script>
 </body>

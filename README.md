@@ -99,12 +99,25 @@
     
   10、Array.prototype.slice.call(div_list) 将伪数组转化为真正的数组；
   
-  11、合并两个数组
+  11、合并两个数组,concat方法也可以用于将对象合并为数组，但是必须借助call方法。
 
     var a = [1, 2, 3];
     var b = [4, 5, 6];
     a.push.apply(a, b) 或者 Array.prototype.push.apply(a, b)
     a // [1, 2, 3, 4, 5, 6]
+    var a = [1, 2, 3, 4];
+    a.join(' ') // '1 2 3 4'
+    a.join(' | ') // "1 | 2 | 3 | 4"
+    a.join() // "1,2,3,4"
+    Array.prototype.join.call('hello', '-') // "h-e-l-l-o"
+    [].concat.call({ a: 1 }, { b: 2 }) // [{ a: 1 }, { b: 2 }]
+    [].concat.call({ a: 1 }, [2]) // [{a:1}, 2] // 等同于 [2].concat({a:1})
+    
+    
+    
+    
+  
+
     
     
   

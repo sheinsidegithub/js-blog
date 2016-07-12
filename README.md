@@ -98,6 +98,14 @@
     第三阶段：从目标节点传导回window对象，称为“冒泡阶段”（bubbling phase）。
     
   10、Array.prototype.slice.call(div_list) 将伪数组转化为真正的数组；
+  
+  11、合并两个数组
+
+    var a = [1, 2, 3];
+    var b = [4, 5, 6];
+    a.push.apply(a, b) 或者 Array.prototype.push.apply(a, b)
+    a // [1, 2, 3, 4, 5, 6]
+    
     
   
   

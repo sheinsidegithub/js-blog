@@ -113,6 +113,12 @@
     [].concat.call({ a: 1 }, { b: 2 }) // [{ a: 1 }, { b: 2 }]
     [].concat.call({ a: 1 }, [2]) // [{a:1}, 2] // 等同于 [2].concat({a:1})
     
+  12、正则 RegExp 对象
+
+    var regex = /xyz/i;//采用字面量的写法，正则对象在代码载入时（即编译时）生成
+    var regex = new RegExp('xyz', "i"); //采用构造函数的方法，正则对象在代码运行时生成。
+    
+    
     
     
     

@@ -123,6 +123,29 @@
 
     正则对象的test方法返回一个布尔值
     正则对象的exec方法，可以返回匹配结果,如果发现匹配，就返回一个数组
+    
+  13、利用javascript中Image对象，通过 onload 事件和 onreadystatechange 来进行判断图片是否加载完成
+
+    <script type="text/javascript">
+      var obj=new Image();
+      obj.src="http://www.phpernote.com/uploadfiles/editor/201107240502201179.jpg";
+      obj.onload=function(){
+        alert('图片的宽度为：'+obj.width+'；图片的高度为：'+obj.height);
+        document.getElementById("mypic").innnerHTML="<img src='"+this.src+"' />";
+      }
+    </script>
+    <script type="text/javascript">
+      var obj=new Image();
+      obj.src="http://www.phpernote.com/uploadfiles/editor/201107240502201179.jpg";
+      obj.onreadystatechange=function(){
+        if(this.readyState=="complete"){
+          alert('图片的宽度为：'+obj.width+'；图片的高度为：'+obj.height);
+          document.getElementById("mypic").innnerHTML="<img src='"+this.src+"' />";
+        }
+      }
+    </script>
+
+
 
   
     

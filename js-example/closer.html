@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//
+	function getElement () {
+		[1,2,3].forEach (function (element) {
+			if(element % 2 == 0) {
+				alert('found:' + element);
+				return element;
+			}
+
+		})
+		return null;
+	}
+	getElement();
+	var aa = [1,2,3,4,3,6,22,12,'f','c']
+	aa.sort(function(a,b){
+		return a-b;
+	})
+	console.log(aa);
+
+	function creatFunctions(){
+	    var result = new Array();
+	    for(var i=0;i<10;i++){
+	        result[i] = function(num){
+	          console.log(num);
+	          return function(){
+	            console.log(num,111)
+	            return num;
+	          }/*(num)*/;
+	        }(i);
+	    }
+	    return result;
+	}
+	var aaa = creatFunctions();
+	console.log(aaa);
+
+
+	function creatFunction(){
+	  var result = new Array();
+	  for(var i=0;i<10;i++){
+	    result[i] = function(){
+	      return i;
+	    }(i);
+	  }
+	  return result;
+	}
+	var aaaa = creatFunction();
+	console.log(aaaa);
+
+	function outerFun(){ 
+        var a=0; 
+        function innerFun() {  
+            a++;  
+            alert(a); 
+        } 
+        return innerFun;  //注意这里
+    }
+    var obj=outerFun();
+    obj();  //结果为1
+    obj(); //2 
+    var obj2=outerFun();
+    obj2(); //1 
+    obj2(); //2
+</script>
+</body>
+</html>

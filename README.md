@@ -147,7 +147,9 @@
     
   14、在非严格模式下，调用上下文（this的值）是全局变量，然而，在严格模式下，调用上下文则是 undefined
   
-    var strict = (function(){return !this}()
+    var strict = (function(){return !this}())
+    
+  15、
     
   
 
